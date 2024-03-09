@@ -44,9 +44,6 @@ class Solution {
                     List<Sudoku.Info> infoList = new ArrayList<>();
                     infoList.add(new Sudoku.Info(i,j,val));
                     Sudoku nextKu = new Sudoku(nextBoard,copyToSolveBoard(toSolveBoard),infoList);
-                    if(i == 0) {
-                        System.out.println("尝试第0行，第"+j+"列为："+val+"的数据");
-                    }
                     if(dfs(nextKu)) {
                         return true;
                     }
@@ -67,6 +64,6 @@ public class Main {
         Solution solution = new Solution();
         solution.solve();
         long end_time = System.currentTimeMillis();
-        System.out.println("程序总共耗时："+(end_time-before_time)/1000+"秒");
+        System.out.println("程序总共耗时："+(end_time-before_time)+"毫秒");
     }
 }
