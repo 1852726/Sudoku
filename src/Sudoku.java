@@ -142,19 +142,19 @@ public class Sudoku {
             }
         }
         int ix = 0;
-        boolean ans = true;
+        boolean ans;
         while(ix < solveList.size()) {
             Info curInfo = solveList.get(ix);
-            ans = ans && processRowAndCol(curInfo);
+            ans = processRowAndCol(curInfo);
             ans = ans && processBlock(curInfo);
+            if(!ans) {
+                return -1;
+            }
             ix++;
         }
-        if(ans) {
-            if(isSolved()) {
-                return 0;
-            }
-            return 1;
+        if(isSolved()) {
+            return 0;
         }
-        return -1;
+        return 1;
     }
 }
