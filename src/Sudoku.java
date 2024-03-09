@@ -11,7 +11,7 @@ public class Sudoku {
         int ix = 0, i = 0;
         while(ix < SIZE) {
             if(line.charAt(i)>='0' && line.charAt(i)<='9') {
-                ansArr[ix++] = Integer.parseInt(String.valueOf(line.charAt(i)));
+                ansArr[ix++] = line.charAt(i)-'0';
             }
             i++;
         }
